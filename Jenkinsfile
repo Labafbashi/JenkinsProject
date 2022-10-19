@@ -7,19 +7,19 @@ pipeline {
         sh 'npm install'
       }
     }
-    stages (Unit Test){
+    stages ('Unit Test'){
       steps {
         echo "******************** Unit Test Stage ************************"
         sh 'npm run test-unit'
       }
     }
-    stages (Unit Test All){
+    stages ('Unit Test All'){
       steps{
         echo "******************** Unit Test All Stage ************************"
         sh 'npm run test-all'
       }
     }
-    stages (Unit Test Integration){
+    stages ('Unit Test Integration'){
       when {
         anyOf {
           branch 'develop'
