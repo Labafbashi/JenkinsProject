@@ -1,25 +1,25 @@
 pipeline {
   agent any
   stages{
-    stage ('PreBuild'){
+    stage('PreBuild'){
       steps {
         echo "******************** Pre Build Stage ************************"
         sh 'npm install'
       }
     }
-    stages ('Unit Test'){
+    stage('Unit Test'){
       steps {
         echo "******************** Unit Test Stage ************************"
         sh 'npm run test-unit'
       }
     }
-    stages ('Unit Test All'){
+    stage('Unit Test All'){
       steps{
         echo "******************** Unit Test All Stage ************************"
         sh 'npm run test-all'
       }
     }
-    stages ('Unit Test Integration'){
+    stage('Unit Test Integration'){
       when {
         anyOf {
           branch 'develop'
@@ -31,7 +31,7 @@ pipeline {
         sh 'npm run test-integration'
       }
     }
-    stages ('Devlivery'){
+    stage('Devlivery'){
       when {
         branch 'main'
       }
