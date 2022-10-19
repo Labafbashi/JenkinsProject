@@ -38,7 +38,7 @@ pipeline {
       steps{
         echo "******************** Delivery Stage ************************"
         script {
-          docker.writeRegistery('https://registery.hub.docker.com', 'dockerhub'){
+          docker.withRegistry('https://registry.hub.docker.com', 'dockerhub'){
             def img = docker.build ("paramont/express-calculator")
             img.push()
             img.run('-p 49160:3000')
