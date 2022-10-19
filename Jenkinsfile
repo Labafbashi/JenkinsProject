@@ -32,9 +32,9 @@ pipeline {
       }
     }
     stage('Devlivery'){
-      when {
-        branch 'main'
-      }
+//      when {
+//        branch 'main'
+//      }
       steps{
         echo "******************** Delivery Stage ************************"
         script {
