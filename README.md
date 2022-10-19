@@ -1,3 +1,3 @@
-# Jenkins Project
+# JenkindProject
 
-The source code of project copied from Patrik github page.
+Source code of application coped from https://github.com/patriques82/node_calculator
